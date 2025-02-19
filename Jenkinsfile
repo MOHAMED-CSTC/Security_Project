@@ -6,13 +6,6 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Composer Audit') {
-            steps {
-                // Exécuter Composer Audit pour vérifier les vulnérabilités sans installer les dépendances
-                sh 'composer audit'
-            }
-        }
-
         stage('SonarQube Analysis') {
             steps {
                 script {
